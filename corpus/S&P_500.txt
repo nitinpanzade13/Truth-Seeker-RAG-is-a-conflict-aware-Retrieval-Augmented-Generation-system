@@ -1,0 +1,44 @@
+S&P 500 (Standard and Poor's 500) is a stock market index tracking the stock performance of 500 leading companies listed on stock exchanges in the United States. It is one of the most commonly followed equity indices and includes approximately 80% of the total market capitalization of U.S. public companies, with an aggregate market cap of more than $61.1 trillion as of December 31, 2025.
+The S&P 500 index is a public float weighted/capitalization-weighted index. The ten largest companies on the list of S&P 500 companies account for approximately 38% of the market capitalization of the index and the 50 largest components account for 60% of the index. As of January 2026, the 10 largest components are, in order of highest to lowest weighting: Nvidia (7.17%), Alphabet (6.39%, including both class A & C shares), Apple (5.86%), Microsoft (5.33%), Amazon (3.98%), Broadcom (2.51%), Meta Platforms (2.49%), Tesla (2.31%), Berkshire Hathaway (1.68%), and Lilly (Eli) (1.55%). The components that have increased their dividends in 25 consecutive years are known as the S&P 500 Dividend Aristocrats. Companies in the S&P 500 derive a collective 72% of revenues from the United States and 28% from other countries.
+The index is one of the factors in the computation of the Conference Board Leading Economic Index, which is used to forecast the direction of the economy. The index is associated with many ticker symbols, including ^GSPC, .INX, and SPX, depending on market or website. The S&P 500 is maintained by S&P Dow Jones Indices, a joint venture majority-owned by S&P Global, and its components are selected by a committee.
+
+Investing in the S&P 500
+Mutual and exchange-traded funds
+Index funds, including mutual funds and exchange-traded funds (ETFs), can replicate, before fees and expenses, the performance of the index by holding the same stocks as the index in the same proportions. ETFs that replicate the performance of the index are issued by The Vanguard Group (NYSE Arca: VOO), iShares (NYSE Arca: IVV), and State Street Corporation (SPDR S&P 500 ETF Trust, NYSE Arca: SPY and NYSE Arca: SPYM). The most liquid based on average daily volume is (NYSE Arca: SPY), although SPY has a higher annual expense ratio of 0.09% compared to 0.03% for VOO and IVV, and 0.02% for SPYM. Mutual funds that track the index are offered by Fidelity Investments, T. Rowe Price, and Charles Schwab Corporation.
+Direxion offers leveraged ETFs which attempt to produce 3x the daily return of either investing in (NYSE Arca: SPXL) or shorting (NYSE Arca: SPXS) the S&P 500. ProShares offers 2x daily return (NYSE Arca: SSO) and 3x daily return (NYSE Arca: UPRO).
+
+Derivatives
+In the derivatives market, the Chicago Mercantile Exchange (CME) offers futures contracts that track the index and trade on the exchange floor in an open outcry auction, or on CME's Globex platform, and are the exchange's most popular product. The Chicago Board Options Exchange (CBOE) offers options on the S&P 500 as well as on S&P 500 ETFs, inverse ETFs, and leveraged ETFs.
+
+History
+In 1860, Henry Varnum Poor formed Poor's Publishing, which published an investor's guide to the railroad industry. In 1923, Standard Statistics Company (founded in 1906 as the Standard Statistics Bureau) began rating mortgage bonds and developed its first stock market index consisting of the stocks of 233 U.S. companies, computed weekly. Three years later, it developed a 90-stock index, computed daily. In 1941, Poor's Publishing merged with Standard Statistics Company to form Standard & Poor's.
+On Monday, March 4, 1957, the index was expanded to its current extent of 500 companies and was renamed the S&P 500 Stock Composite Index. In 1962, Ultronic Systems became the compiler of the S&P indices including the S&P 500 Stock Composite Index, the 425 Stock Industrial Index, the 50 Stock Utility Index, and the 25 Stock Rail Index. On August 31, 1976, The Vanguard Group offered the first mutual fund to retail investors that tracked the index. On April 21, 1982, the Chicago Mercantile Exchange began trading futures based on the index. On July 1, 1983, Chicago Board Options Exchange began trading options based on the index. Beginning in 1986, the index value was updated every 15 seconds, or 1,559 times per trading day, with price updates disseminated by Reuters. Prior to this, it had been updated once every minute.
+On January 22, 1993, the Standard & Poor's Depositary Receipts exchange-traded fund issued by State Street Corporation began trading. On September 9, 1997, CME Group introduced the S&P E-mini futures contract. In 2005, the index transitioned to a public float-adjusted capitalization-weighting. Friday, September 17, 2021, was the final trading date for the original SP big contract which began trading in 1982.
+
+Selection criteria
+Like other indices managed by S&P Dow Jones Indices, but unlike indices such as the Russell 1000 Index which are strictly rule-based, the components of the S&P 500 are selected by a committee. When considering the eligibility of a new addition, the committee assesses the company's merit using the following primary criteria:
+
+Market capitalization - Market capitalization must be greater than or equal to US$22.7 billion (effective on July 1, 2025). These market cap eligibility criteria are for addition to an index, not for continued membership. As a result, an index constituent that appears to violate criteria for addition to that index is not removed unless ongoing conditions warrant an index change.
+Market liquidity and public float – Annual dollar value traded to float-adjusted market capitalization is greater than 0.75.
+Volume – Minimum monthly trading volume of 250,000 shares in each of the six months leading up to the evaluation date
+Stock exchange – Must be publicly listed on the New York Stock Exchange (including NYSE Arca or NYSE American), Nasdaq (Nasdaq Global Select Market, Nasdaq Select Market or the Nasdaq Capital Market) or Cboe (Cboe BZX, Cboe BYX, Cboe EDGA or Cboe EDGX).
+Domicile – The company must have its primary listing on a U.S. exchange.
+Securities that are ineligible for inclusion in the index are limited partnerships, master limited partnerships and their investment trust units, OTC Bulletin Board issues, closed-end funds, exchange-traded funds, Exchange-traded notes, royalty trusts, tracking stocks, preferred stock, unit trusts, equity warrants, convertible bonds, investment trusts, American depositary receipts, and American depositary shares.
+A stock may rise in value when it is added to the index since index funds must purchase that stock to continue tracking the index.
+A study published by the National Bureau of Economic Research in October 2021 alleged that companies' purchases of ratings services from S&P Global appear to improve their chance of entering the S&P 500, even if they are not the best fit per the rules.
+
+Performance
+Since its inception in 1926, the index's compound annual growth rate—including dividends—has been approximately 9.8% (6% after inflation), with the standard deviation of the return, calculated on a monthly basis, over the same time period being 20.81%. While the index has declined in several years by over 30%, it has posted annual increases 70% of the time, with 5% of all trading days resulting in record highs.
+Returns are generally quoted as price returns (excluding returns from dividends). However, they can also be quoted as total return, which includes returns from dividends and the reinvestment thereof, and "net total return", which reflects the effects of dividend reinvestment after the deduction of withholding tax.
+
+The S&P 500’s record closing high of 6,932.05 was set on December 24, 2025. The index had experienced an intra-year correction, typically defined as a decline of 10 to 20%, and it fell to a low of 4,982.77 on April 8 before staging a sharp recovery. The S&P 500 rose above 7,000 points during trading, for the first time in history on January 28, 2026.
+
+See also
+List of S&P 500 companies
+SPDR S&P 500 ETF Trust
+S&P Dow Jones Indices
+Closing milestones of the S&P 500
+List of recessions in the United States
+
+
+== References ==
