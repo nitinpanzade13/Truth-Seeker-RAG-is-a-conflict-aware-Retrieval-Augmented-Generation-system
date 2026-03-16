@@ -1,0 +1,22 @@
+# Python cache and virtual env
+__pycache__/
+*.py[cod]
+venv/
+
+# Local runtime artifacts
+logs/
+mlruns/
+
+# Local model artifacts
+deberta-multinli/
+deberta-multinli-final/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Local bundles/docs
+*.zip
+*.docx
+~$*.docx
