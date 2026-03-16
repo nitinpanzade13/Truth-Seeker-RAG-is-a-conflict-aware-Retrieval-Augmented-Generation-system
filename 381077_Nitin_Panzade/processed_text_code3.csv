@@ -1,5 +1,0 @@
-text,label,clean_text,processed_text,label_encoded
-I love Machine Learning!,positive,i love machine learning,love machine learning,1
-Machine learning is AMAZING,positive,machine learning is amazing,machine learning amazing,1
-I enjoy learning NLP,positive,i enjoy learning nlp,enjoy learning nlp,1
-NLP and machine learning are related,neutral,nlp and machine learning are related,nlp machine learning related,0
