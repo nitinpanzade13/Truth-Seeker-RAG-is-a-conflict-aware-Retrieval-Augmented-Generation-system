@@ -4,7 +4,7 @@ import numpy as np
 
 from wiki_loader import load_local_corpus, chunk_text
 from retriever import add_documents, retrieve
-from reranker import rerank
+from reranker import rerank_with_indices
 from claim_conflict_graph import build_claim_conflict_matrix, compute_claim_conflict_penalty
 from confidence_calibrator import compute_calibrated_scores, confidence_summary
 from conflict_visualizer import plot_conflict_graph_interactive, get_graph_stats
@@ -89,8 +89,13 @@ if st.button("Generate Answer") and query:
     rerank_scores = None
     if use_reranker:
         with st.spinner("Reranking with cross-encoder..."):
-            reranked = rerank(query, retrieved_docs, retrieval_scores)
-            rerank_scores = [s for _, s in reranked]
+            reranked = rerank_with_indices(query, retrieved_docs, retrieval_scores)
+
+        ordered_indices = [idx for idx, _, _ in reranked]
+        retrieved_docs = [retrieved_docs[i] for i in ordered_indices]
+        retrieval_scores = [retrieval_scores[i] for i in ordered_indices]
+        source_types = [source_types[i] for i in ordered_indices]
+        rerank_scores = [score for _, _, score in reranked]
 
     # Layout: 2 Columns
     col1, col2 = st.columns(2)
@@ -102,8 +107,6 @@ if st.button("Generate Answer") and query:
         st.subheader("📚 Retrieved Documents")
 
         display_order = list(enumerate(zip(retrieved_docs, retrieval_scores)))
-        if rerank_scores:
-            display_order.sort(key=lambda x: rerank_scores[x[0]], reverse=True)
 
         for idx, (doc, score) in display_order:
             src_label = f"🌐 Web" if source_types[idx] == "web" else "📄 Corpus"
@@ -119,9 +122,11 @@ if st.button("Generate Answer") and query:
     with col2:
         st.subheader("⚖ Conflict Analysis")
 
-        with st.spinner("Running claim-level conflict detection..."):
-            conflict_matrix = build_claim_conflict_matrix(retrieved_docs)
+        with st.spinner("Running claim-level conflict detection (optimized)..."):
+            conflict_matrix = build_claim_conflict_matrix(retrieved_docs, max_claims_per_doc=10)
             penalties = compute_claim_conflict_penalty(conflict_matrix)
+        
+        st.caption("✓ Conflict analysis complete (using sampled claims for speed)")
 
         for i, penalty in enumerate(penalties):
             src_label = "🌐" if source_types[i] == "web" else "📄"

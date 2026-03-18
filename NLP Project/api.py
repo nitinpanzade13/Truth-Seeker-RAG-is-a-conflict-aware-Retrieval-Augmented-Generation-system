@@ -12,7 +12,7 @@ from pydantic import BaseModel, Field
 
 from wiki_loader import load_local_corpus, chunk_text
 from retriever import add_documents, retrieve
-from reranker import rerank
+from reranker import rerank_with_indices
 from claim_conflict_graph import build_claim_conflict_matrix, compute_claim_conflict_penalty
 from confidence_calibrator import compute_calibrated_scores, confidence_summary
 from generator import generate_answer
@@ -117,14 +117,12 @@ def query_endpoint(req: QueryRequest):
     # 3. Cross-encoder reranking
     rerank_scores = None
     if req.use_reranker and docs:
-        reranked = rerank(req.query, docs, retrieval_scores)
-        rerank_scores = [s for _, s in reranked]
-        # Re-order docs to match reranked order
-        rerank_order = {doc: i for i, (doc, _) in enumerate(reranked)}
-        ordered_indices = sorted(range(len(docs)), key=lambda i: rerank_order.get(docs[i], i))
+        reranked = rerank_with_indices(req.query, docs, retrieval_scores)
+        ordered_indices = [idx for idx, _, _ in reranked]
         docs = [docs[i] for i in ordered_indices]
         retrieval_scores = [retrieval_scores[i] for i in ordered_indices]
         source_types = [source_types[i] for i in ordered_indices]
+        rerank_scores = [score for _, _, score in reranked]
 
     # 4. Conflict detection
     conflict_matrix = build_claim_conflict_matrix(docs)

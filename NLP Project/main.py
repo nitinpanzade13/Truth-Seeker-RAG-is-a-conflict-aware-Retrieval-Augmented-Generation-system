@@ -1,6 +1,6 @@
 from wiki_loader import load_local_corpus, chunk_text
 from retriever import add_documents, retrieve
-from reranker import rerank
+from reranker import rerank_with_indices
 from claim_conflict_graph import build_claim_conflict_matrix, compute_claim_conflict_penalty
 from confidence_calibrator import compute_calibrated_scores, confidence_summary
 from generator import generate_answer
@@ -65,18 +65,24 @@ if use_web:
 # STEP 3.6 — Cross-Encoder Reranking
 # ---------------------------------------
 print("\nRunning cross-encoder reranking...")
-reranked = rerank(query, retrieved_docs, retrieval_scores)
-rerank_scores = [s for _, s in reranked]
+reranked = rerank_with_indices(query, retrieved_docs, retrieval_scores)
+
+ordered_indices = [idx for idx, _, _ in reranked]
+retrieved_docs = [retrieved_docs[i] for i in ordered_indices]
+retrieval_scores = [retrieval_scores[i] for i in ordered_indices]
+source_types = [source_types[i] for i in ordered_indices]
+rerank_scores = [score for _, _, score in reranked]
 
 print("\nReranked Documents:")
-for doc, score in reranked[:5]:
+for doc, score in zip(retrieved_docs[:5], rerank_scores[:5]):
     print(f"\nRerank Score: {round(score, 3)}")
     print(doc[:250], "...")
 
 # ---------------------------------------
 # STEP 4 — Claim-Level Conflict Detection
 # ---------------------------------------
-conflict_matrix = build_claim_conflict_matrix(retrieved_docs)
+print("\nRunning claim-level conflict detection (optimized with sampling)...")
+conflict_matrix = build_claim_conflict_matrix(retrieved_docs, max_claims_per_doc=10)
 penalties = compute_claim_conflict_penalty(conflict_matrix)
 
 print("\nConflict Penalties:")

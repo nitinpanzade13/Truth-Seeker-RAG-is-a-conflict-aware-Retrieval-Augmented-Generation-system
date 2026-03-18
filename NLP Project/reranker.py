@@ -11,18 +11,12 @@ def _get_cross_encoder():
     return _cross_encoder
 
 
-def rerank(query, documents, scores=None, top_k=None):
+def rerank_with_indices(query, documents, scores=None, top_k=None):
     """
-    Rerank documents using a cross-encoder model for more accurate relevance scoring.
-
-    Args:
-        query: The user query string.
-        documents: List of document text strings.
-        scores: Optional list of original retrieval scores (for blending).
-        top_k: Number of top results to return. None returns all.
+    Rerank documents and preserve original indices for stable alignment.
 
     Returns:
-        List of (document, rerank_score) tuples sorted by relevance descending.
+        List of (original_index, document, rerank_score) sorted descending.
     """
     if not documents:
         return []
@@ -48,8 +42,8 @@ def rerank(query, documents, scores=None, top_k=None):
         blended = ce_normalized
 
     ranked = sorted(
-        zip(documents, blended),
-        key=lambda x: x[1],
+        [(idx, doc, blended[idx]) for idx, doc in enumerate(documents)],
+        key=lambda x: x[2],
         reverse=True,
     )
 
@@ -57,3 +51,21 @@ def rerank(query, documents, scores=None, top_k=None):
         ranked = ranked[:top_k]
 
     return ranked
+
+
+def rerank(query, documents, scores=None, top_k=None):
+    """
+    Rerank documents using a cross-encoder model for more accurate relevance scoring.
+
+    Args:
+        query: The user query string.
+        documents: List of document text strings.
+        scores: Optional list of original retrieval scores (for blending).
+        top_k: Number of top results to return. None returns all.
+
+    Returns:
+        List of (document, rerank_score) tuples sorted by relevance descending.
+    """
+    ranked = rerank_with_indices(query, documents, scores=scores, top_k=top_k)
+
+    return [(doc, score) for _, doc, score in ranked]
